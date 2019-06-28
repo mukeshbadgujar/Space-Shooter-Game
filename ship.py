@@ -1,5 +1,5 @@
 import pygame
-import image
+
 
 class Ship:
     def __init__(self, ai_settings, screen):  # screen is where to draw the ship
@@ -15,7 +15,7 @@ class Ship:
         self.rect.centerx = self.screen_rect.centerx
         self.rect.bottom = self.screen_rect.bottom
 
-        #Store Decimal value for ship center
+        # Store Decimal value for ship center
         self.center = float(self.rect.centerx)
 
         # Movement Flag
