@@ -11,18 +11,16 @@ class Alien(Sprite):
         self.ai_settings = ai_settings
 
         # load img and rect
-        self.img = pygame.image.load('alien1.png')
-        self.rect = self.img.get_rect()
+        self.image = pygame.image.load('alien1.png')  # AAthe Img taka te error yes kab??
+        self.rect = self.image.get_rect()
 
-        # Creating Alin at top
+        # Creating Alien at top
         self.rect.x = self.rect.width
         self.rect.y = self.rect.height
 
         # Store Position of alien
         self.x = float(self.rect.x)
 
-    def blitme(self):
-        #  Draw Alien
-        self.screen.blit(self.img, self.rect)
+
 
 
