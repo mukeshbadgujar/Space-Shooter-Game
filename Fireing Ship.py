@@ -1,6 +1,5 @@
 import sys
 import pygame
-
 from settings import Settings
 from ship import Ship
 import game_functions as gf
@@ -12,7 +11,7 @@ def run_game():
     pygame.init()
     ai_settings = Settings()
     # Initializing Gaming Window
-    screen = pygame.display.set_mode((ai_settings.screenWidth, ai_settings.screenHeight))
+    screen = pygame.display.set_mode((ai_settings.screen_width, ai_settings.screen_height))
     pygame.display.set_caption("Alien Attack")
 
     # Make a Ship
@@ -20,7 +19,11 @@ def run_game():
 
     # Make group to store bullets
     bullets = Group()
+    aliens = Group()
 
+    gf.create_fleet(ai_settings, screen, aliens)
+    # Make Alien
+    # alien = Alien(ai_settings, screen)
 
     # Starting Main Loop
     while True:
@@ -28,9 +31,7 @@ def run_game():
         ship.update()
         bullets.update()
         gf.update_bullets(bullets)
-        gf.update_screen(ai_settings, screen, ship, bullets)
-
-
+        gf.update_screen(ai_settings, screen, ship, aliens, bullets)
 
 
 run_game()
